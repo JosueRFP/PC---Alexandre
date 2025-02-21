@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStatus : CharacterStatus
-{   
+public abstract class CharacterStatus : MonoBehaviour
+{
+    [SerializeField] float lifeMax;
+    [SerializeField] float speed;
+    float life;
     // Start is called before the first frame update
-    void Start()
-    {
-        print("Filho");
-    }
+   void Awake()
+   {
+        life = lifeMax;
+        print("Pai");
+   }
 
     // Update is called once per frame
     void Update()
