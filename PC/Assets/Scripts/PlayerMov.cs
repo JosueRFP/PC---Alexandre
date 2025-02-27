@@ -1,17 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMov : MonoBehaviour
 {
-    Rigidbody rb;
+    Rigidbody2D rb;
     float horizontal, vertical;
     PlayerStatus status;
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
         status = GetComponent<PlayerStatus>();
     }
 
@@ -23,6 +22,6 @@ public class PlayerMov : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2 (horizontal, vertical) *status.Speed;
+        rb.velocity = new Vector2 (horizontal, vertical) * status.Speed;
     }
 }
