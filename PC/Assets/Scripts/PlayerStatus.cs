@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerStatus : CharacterStatus
-{   
+{
+   
+
     // Start is called before the first frame update
     void Start()
     {
-        print("Filho");
+       
     }
 
     // Update is called once per frame
