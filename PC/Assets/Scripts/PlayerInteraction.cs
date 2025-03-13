@@ -16,7 +16,7 @@ public class PlayerInteraction : MonoBehaviour
     void Update()
     {
         if(Input.GetButtonDown("Fire1"))// Quando não se tem chaves em um "if" se lê apenas a linha de baixo.
-            interactable?.Ineteract();
+        interactable?.Interact();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,6 +24,10 @@ public class PlayerInteraction : MonoBehaviour
              if(collision.gameObject.TryGetComponent(out IInteractable target))
              {
                     interactable = target;
+             }
+             if (collision.gameObject.TryGetComponent(out IColetable coletable))
+             {
+                Destroy(collision.gameObject);
              }
     }
     private void OnTriggerExit2D(Collider2D collision)

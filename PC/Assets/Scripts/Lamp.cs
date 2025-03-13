@@ -9,7 +9,7 @@ public class Lamp : MonoBehaviour, IInteractable
     [SerializeField] Color activateColor;
     SpriteRenderer spriteRenderer;
     bool isON;
-    public void Ineteract()
+    public void Interact()
     {
         if (isON)
         {
@@ -21,6 +21,11 @@ public class Lamp : MonoBehaviour, IInteractable
             isON = true;
             spriteRenderer.color = activateColor;
         }
+    }
+
+    public void Interact(GameObject item)
+    {
+        throw new System.NotImplementedException();
     }
 
     // Start is called before the first frame update
